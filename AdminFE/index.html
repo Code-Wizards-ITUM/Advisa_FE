@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index Page</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #ffffff;
+        margin: 0;
+      }
+
+      #logo {
+        width: 200px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="logo" src="./images/logo2.png" alt="Brand Logo" />
+    <script src="js/config.js"></script>
+    <script>
+      async function checkAuthToken() {
+        try {
+          const token = localStorage.getItem("jwtToken");
+          if (token) {
+            const response = await fetch(`${API_BASE_URL}login/verify-token`, {
+              method: "GET",
+              headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+              },
+            });
+
+            if (response.ok) {
+              // If the response is successful (status in the range 200-299)
+              window.location.href = "./html/home.html";
+            } else {
+              localStorage.removeItem("jwtToken");
+              localStorage.removeItem("phoneNumber");
+              localStorage.removeItem("userType");
+              alert("Your login session expired. Please login again");
+              window.location.href = "./html/adminLogin.html";
+            }
+            // Token exists, navigate to home page
+          } else {
+            // No token found, navigate to login page
+            window.location.href = "./html/adminLogin.html";
+          }
+        } catch (error) {
+          if (error.response && error.response.status === 401) {
+            localStorage.removeItem("jwtToken");
+            localStorage.removeItem("phoneNumber");
+            localStorage.removeItem("userType");
+            alert("Your login session expired. Please login again");
+            window.location.href = "./html/adminLogin.html";
+          } else {
+            console.error("An error occurred during token verification:", error);
+          }
+        }
+      }
+
+      // Function to check if JWT token exists in localStorage
+      //   function checkAuthToken() {
+      //     const token = localStorage.getItem("jwtToken");
+      //     if (token) {
+      //       // Token exists, navigate to home page
+      //       window.location.href = "./html/home.html";
+      //     } else {
+      //       // No token found, navigate to login page
+      //       window.location.href = "./html/adminLogin.html";
+      //     }
+      //   }
+
+      // Show the brand logo for 5 seconds, then check for the JWT token
+      setTimeout(() => {
+        checkAuthToken();
+      }, 5000); // 5 seconds delay
+    </script>
+  </body>
+</html>

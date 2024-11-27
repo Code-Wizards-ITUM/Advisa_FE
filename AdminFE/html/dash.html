@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consultant Requests</title>
+    <link rel="stylesheet" href="../css/consult.css" />
+  </head>
+
+  <body>
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="active" href="home.html">Home</a></li>
+        <li><a href="dash.html">Consultants</a></li>
+        <li><a href="appointment.html">Appointments</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="report.html">Reports</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+
+    <div class="container">
+      <h2>New Consultant Requests.</h2>
+      <h3>All the experts requests are in the system will reveiw here.</h3>
+      <br />
+      <div class="tabs">
+        <button class="tab-button" onclick="document.location='dash.html'">New Requests</button>
+        <button class="tab-button active" onclick="document.location='consultorsall.html'">
+          Consultants
+        </button>
+        <button class="tab-button active" onclick="document.location='rejectconsult.html'">
+          Rejected
+        </button>
+        <button class="tab-button active" onclick=" window.open('verifications.html', '_blank')">
+          Verification Sites
+        </button>
+      </div>
+      <div id="consultantRequests"></div>
+    </div>
+    <div id="profileModal" class="modal"></div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/nrequest.js"></script>
+  </body>
+</html>

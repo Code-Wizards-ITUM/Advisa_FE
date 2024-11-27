@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Dashboard</title>
+    <link rel="stylesheet" href="../css/report.css">
+</head>
+
+<body>
+    <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="active " href="home.html">Home</a></li>
+            <li><a href="dash.html">Consultants</a></li>
+            <li><a href="appointment.html">Appointments</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="report.html">Reports</a></li>
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+    <div class="dashboard">
+        <h1>Dashboard</h1>
+        <div class="stats">
+            <div id="experts" class="stat-box"></div>
+            <div id="types" class="stat-box"></div>
+            <div id="users" class="stat-box"></div>
+            <div id="appointments" class="stat-box"></div>
+            <div id="blogs" class="stat-box"></div>
+            <div id="revenue" class="stat-box"></div>
+        </div>
+        <div class="reports">
+            <h2>Reports</h2>
+            <label for="start-date"><b>Start Date:</b></label>
+            <input type="date" id="start-date">
+            <label for="end-date"><b>End Date:</b></label>
+            <input type="date" id="end-date">
+            <button onclick="generateReport()">Generate Report</button>
+        </div>
+    </div>
+    <script src="../js/config.js"></script>
+    <script src="../js/report.js"></script>
+</body>
+
+</html>

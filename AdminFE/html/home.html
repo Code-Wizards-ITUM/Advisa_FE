@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/home.css">
+
+</head>
+
+<body>
+
+    <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="active " href="home.html">Home</a></li>
+            <li><a href="dash.html">Consultants</a></li>
+            <li><a href="appointment.html">Appointments</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="report.html">Reports</a></li>
+            <li class="logout-icon" onclick="logout()">
+                <img src="../images/logout-icon-2048x1708-5s1s9mb0.png" alt="Logout" title="Logout">
+            </li>
+
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+    </div>
+
+    <div class="dashboard">
+        <h1>Hello Admin!</h1>
+        <p>Welcome to admin dashboard</p>
+
+        <div class="dashboard-buttons">
+            <button class="dashboard-btn" onclick="document.location='dash.html'">New Requests</button>
+            <button class="dashboard-btn" onclick="document.location='consultorsall.html'">Manage Consultants</button>
+            <button class="dashboard-btn" onclick="document.location='blogs.html'">Manage Blogs </button>
+            <br>
+            <button class="dashboard-btn" onclick="document.location='report.html'"> Reports</button>
+            <button class="dashboard-btn" onclick="document.location='appointment.html'"> Appointments</button>
+        </div>
+    </div>
+    <script>
+        // JavaScript function for logout functionality
+        function logout() {
+            const confirmLogout = confirm('Are you sure you want to log out?');
+            if (confirmLogout) {
+                // Simulate logout process
+                localStorage.removeItem('jwtToken');
+                localStorage.removeItem('phoneNumber');
+                localStorage.removeItem('userType');
+
+                window.location.href = '../index.html'; // Replace with your actual logout URL
+            }
+        }
+    </script>
+</body>
+
+</html>

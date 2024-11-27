@@ -1,0 +1,191 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+ 
+    background-image: url('../images/ADVISA.png'); /* Add your image path here */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ensure the background covers the full height */
+    margin: 0;
+}
+.logout-icon {
+    float: right;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.logout-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.navbar {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Move the nav items to the right */
+    background-color: #180fbf;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px; /* Adjusted padding for consistent spacing */
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    background-color: #180fbf;
+    color: #f6f7fa;
+    white-space: nowrap;
+    transition: 0.3s;
+    text-decoration: none ;
+}
+
+.navbar a i,
+.navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+}
+
+.navbar a:hover,
+.navbar li:hover>a {
+    color: #a2cce3;
+}
+
+.mobile-nav-toggle {
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
+}
+
+@media (max-width: 991px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+    .navbar ul {
+        display: none;
+    }
+}
+
+.navbar-mobile {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(17, 38, 48, 0.9);
+    transition: 0.3s;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.navbar-mobile ul {
+    display: block;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    padding: 10px 0;
+    background-color: #d52c2c;
+    overflow-y: auto;
+    transition: 0.3s;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #1e4356;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover>a {
+    color: #68A4C4;
+}
+
+.navbar-mobile .getstarted,
+.navbar-mobile .getstarted:focus {
+    margin: 15px;
+}
+
+.notification-icon {
+    font-size: 24px;
+    color: rgb(214, 119, 119);
+}
+
+.dashboard {
+    text-align: center;
+    margin: 60px 0;
+}
+
+.dashboard h1 {
+    font-size: 50px;
+    color: #fcfcff;
+}
+
+.dashboard p {
+    font-size: 20px;
+    color: #e1d5e6;
+    font-style: italic;
+}
+
+.dashboard-buttons {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dashboard-btn {
+    background-color: #34c3e3;
+    border:none;
+    border-color: #f6f7fa;
+    border-width: 10px;
+    padding: 20px 50px;
+    font-size: 20px;
+    color: #550672;
+    font-weight: 200;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.dashboard-btn:hover {
+    background-color: #89ddeb;
+}

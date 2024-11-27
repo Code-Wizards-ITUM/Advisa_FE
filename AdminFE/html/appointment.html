@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments</title>
+    <link rel="stylesheet" href="../css/appoint.css">
+</head>
+<body>
+     
+    <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="active " href="home.html">Home</a></li>
+            <li><a href="dash.html">Consultants</a></li>
+            <li><a href="appointment.html">Appointments</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="report.html">Reports</a></li>
+           
+           
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+    <h1>Appointments</h1>
+    <table id="appointments-table">
+        <thead>
+            <tr>
+                <th>Ref no.</th>
+                <th>Expert's Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Appointment Details</h2>
+            <p id="modal-details"></p>
+        </div>
+    </div>
+    <script src="../js/config.js"></script>
+    <script src="../js/appoint.js"></script>
+</body>
+</html>

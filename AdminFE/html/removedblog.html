@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Web Page</title>
+  <link rel="stylesheet" href="../css/removedblog.css">
+</head>
+
+<body>
+
+  <nav id="navbar" class="navbar">
+    <ul>
+      <li><a class="active" href="home.html">Home</a></li>
+      <li><a href="dash.html">Consultants</a></li>
+      <li><a href="appointment.html">Appointments</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="report.html">Reports</a></li>
+    </ul>
+    <i class="bi bi-list mobile-nav-toggle"></i>
+  </nav>
+
+  <div class="container">
+    <h1>Removed Blog Posts</h1>
+    <div id="blogLoadingContainer" class="blog-container">
+      <!-- blogs are loding here -->
+    </div>
+  </div>
+  
+</div>
+
+
+  <!-- Modal for showing more details -->
+  <div id="blogModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modal-details"></div>
+    </div>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/removedblog.js"></script>
+</body>
+
+</html>
